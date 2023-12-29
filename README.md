@@ -1,3 +1,10 @@
+npm install prisma --save-dev
+npm install prisma --sa  npm i @prisma/client
+npx prisma init 
+prisma migrate dev
+npx prisma studio  
+npm install react-icons 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
