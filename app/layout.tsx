@@ -41,8 +41,8 @@ const links = [
     title: "Offers",
   },
   {
-    href: "/contacts",
-    title: "Contacts",
+    href: "/contact",
+    title: "Contact",
   },
 ];
 export const metadata: Metadata = {
@@ -60,7 +60,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Container className="">
           <Navbar className="py-6 item-center">
-            <NavbarStart className="flex justify-start items-center gap-4 w-1/4">
+            <NavbarStart className="flex justify-start items-center gap-4 w-1/2">
               <div className="dropdown">
                 <div
                   tabIndex={0}
@@ -84,7 +84,7 @@ export default function RootLayout({
                 </div>
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box"
                 >
                   <li>
                     <a>Item 1</a>
@@ -105,7 +105,7 @@ export default function RootLayout({
                   </li>
                 </ul>
               </div>
-              <NavbarBrand className="">
+              <NavbarBrand className="mb-1">
                 <Link
                   href="/"
                   className="text-2xl md:text-3xl lg:text-4xl text-secondary ite font-bold"
@@ -113,19 +113,21 @@ export default function RootLayout({
                   Event
                 </Link>
               </NavbarBrand>
-            </NavbarStart>
-            <NavbarCenter className="hidden lg:flex items-end w-1/2">
-              <ul className="flex items-center justify-center gap-1 pt-1 flex-grow px-1">
+              <ul className="hidden lg:flex items-center justify-center gap-1 pt-1 flex-grow px-1">
                 {links.map((link) => (
                   <li
-                    className="py-2 px-3 text-[1rem] text-gray-800 hover:text-secondary  hover:rounded-md"
+                    className="py-2 px-3 text-[1rem] text-gray-800  hover:rounded-md"
                     key={link.title}
                   >
-                    <Link href={link.href}> {link.title}</Link>
+                    <Link href={link.href} className="hover:text-secondary">
+                      {" "}
+                      {link.title}
+                    </Link>
                   </li>
                 ))}
               </ul>
-            </NavbarCenter>
+            </NavbarStart>
+            <NavbarCenter className=" items-end"></NavbarCenter>
             <NavbarEnd className="flex-1 lg:w-1/4">
               <div className="flex items-center justify-end gap-2">
                 <button className="btn btn-secondary btn-sm md:btn-md md:px-8 rounded-3xl">
